@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveDirection = orientation.forward * vertical + orientation.right * horizontal;
 
-        rb.AddForce(moveDirection.normalized * speed  * 10f, ForceMode.Impulse);
+        rb.AddForce(moveDirection.normalized * speed, ForceMode.Impulse);
 
     }
 
