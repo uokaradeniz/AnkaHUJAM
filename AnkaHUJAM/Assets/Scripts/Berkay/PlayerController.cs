@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
 
     public float speed;
-    public float jump_power = 5f;
     public float groundDrag;
     public LayerMask ground_layer;
     public Transform orientation;
@@ -19,9 +18,11 @@ public class PlayerController : MonoBehaviour
     private GameHandler gameHandler;
 
     private CapsuleCollider capsuleCollider;
+    private Animator animator;
 
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         capsuleCollider = transform.GetComponent<CapsuleCollider>();
         gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
@@ -35,6 +36,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!isOnGround())
+        {
+            animator.SetBool("Floating", true);
+        }
+        else
+        {
+            animator.SetBool("Floating", false);
+        }
+        
         if (!gameHandler.GravityNullified)
         {
             Move();
