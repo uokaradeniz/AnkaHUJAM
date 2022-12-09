@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
     public float groundDrag;
+    public float RotateSpeed;
     public LayerMask ground_layer;
     public Transform orientation;
 
@@ -32,6 +33,8 @@ public class PlayerController : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+
+        RotateByAD();
     }
 
     void FixedUpdate()
@@ -73,5 +76,19 @@ public class PlayerController : MonoBehaviour
                                        ground_layer);
 
         return ray_hit;
+    }
+
+    void RotateByAD()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(-Vector3.up * RotateSpeed * Time.deltaTime);
+        }
+
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(Vector3.up * RotateSpeed * Time.deltaTime);
+        }
+
     }
 }
