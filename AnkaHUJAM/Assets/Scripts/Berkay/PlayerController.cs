@@ -40,13 +40,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (!isOnGround())
-        {
             animator.SetBool("Floating", true);
-        }
-        else
-        {
+            else
             animator.SetBool("Floating", false);
-        }
+        
+        animator.SetFloat("IsWalking", rb.velocity.magnitude);
         
         if (!gameHandler.GravityNullified)
         {
