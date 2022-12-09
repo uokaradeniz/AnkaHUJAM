@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        RotateByAD();
+        // RotateByAD();
     }
 
     void FixedUpdate()
@@ -62,6 +62,12 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = orientation.forward * vertical + orientation.right * horizontal;
 
         rb.AddForce(moveDirection.normalized * speed, ForceMode.Impulse);
+
+        if (moveDirection != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, RotateSpeed * Time.deltaTime);
+        }
 
     }
 
