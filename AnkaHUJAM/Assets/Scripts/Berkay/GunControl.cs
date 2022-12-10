@@ -1,37 +1,57 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GunControl : MonoBehaviour
 {
+    private GameObject muzzle;
+    private LineRenderer lineRenderer;
+    private GameHandler gameHandler;
+    private PlayerController playerController;
 
-    public LayerMask breakable;
-    // public float maxDistanceForRay;
-
-    GameObject player;
-
-    void Start()
+    private void Start()
     {
-        player = transform.parent.gameObject;
+        lineRenderer = transform.Find("Line").GetComponent<LineRenderer>();
+        muzzle = transform.Find("Muzzle").gameObject;
+        gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
-    
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (playerController.isOnGround())
+            transform.localScale = new Vector3(1,1,1);
+            else
+            transform.localScale = new Vector3(0,0,0);
+        
+        if (!gameHandler.GravityNullified)
         {
-            Debug.Log("Shots Fired!!!");
-            Shoot();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                lineRenderer.enabled = true;
+                Shoot();
+            }
         }
     }
 
     void Shoot()
     {
-        GameObject muzzle = transform.GetChild(0).gameObject;
         RaycastHit ray_hit;
-        if (Physics.Raycast(muzzle.transform.position, Vector3.forward, out ray_hit, Mathf.Infinity, breakable))
-        {    
-            Debug.Log("Wall shot.");
+        
+        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out ray_hit, Mathf.Infinity))
+        {
+            lineRenderer.SetPosition(0, muzzle.transform.position);
+            lineRenderer.SetPosition(1, ray_hit.point);
+            Invoke("CloseLineRenderer",0.1f);
+            if(ray_hit.collider.CompareTag("Breakable"))
+                Destroy(ray_hit.collider.gameObject);
         }
+    }
+
+    void CloseLineRenderer()
+    {
+        lineRenderer.enabled = false;
     }
 }

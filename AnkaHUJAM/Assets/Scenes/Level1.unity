@@ -156,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4897602898951709391, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -90.3
+      value: -1.300003
       objectReference: {fileID: 0}
     - target: {fileID: 4897602898951709391, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
       propertyPath: m_LocalPosition.y
@@ -164,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4897602898951709391, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -72.75
+      value: 28.25
       objectReference: {fileID: 0}
     - target: {fileID: 4897602898951709391, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1038,7 +1038,7 @@ GameObject:
   - component: {fileID: 3116818076634901636}
   m_Layer: 0
   m_Name: Breakable
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1315,7 +1315,7 @@ Transform:
   - {fileID: 1758084324012276938}
   - {fileID: 4931218028019788915}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &547282167417253418
 MeshFilter:
@@ -3390,7 +3390,7 @@ GameObject:
   - component: {fileID: 9035604916165482993}
   m_Layer: 0
   m_Name: Breakable.002
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3452,7 +3452,7 @@ GameObject:
   - component: {fileID: 8964271670416441910}
   m_Layer: 0
   m_Name: Breakable.001
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5445,7 +5445,7 @@ GameObject:
   - component: {fileID: 8150016580298189902}
   m_Layer: 0
   m_Name: Breakable.003
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8259,6 +8259,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 541469378567419454, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 756900595}
+    - target: {fileID: 541469378567419454, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
+      propertyPath: tpsOffset
+      value: 
+      objectReference: {fileID: 756900597}
+    - target: {fileID: 541469378567419454, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
+      propertyPath: orientation
+      value: 
+      objectReference: {fileID: 756900596}
     - target: {fileID: 2046158838207946528, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
       propertyPath: player
       value: 
