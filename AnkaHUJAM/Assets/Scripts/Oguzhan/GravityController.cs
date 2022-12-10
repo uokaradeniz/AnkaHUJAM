@@ -8,9 +8,7 @@ public class GravityController : MonoBehaviour
 {
     private Rigidbody rb;
     private GameHandler gameHandler;
-    private Vector3 vel = Vector3.zero;
-    public float smoothFactor;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,21 +21,16 @@ public class GravityController : MonoBehaviour
     {
         if (gameHandler.GravityNullified)
         {
-            if(!gameObject.CompareTag("Player"))
-                rb.AddTorque(Vector3.one * Random.Range(-.1f ,.1f));
-            //else
-                //transform.Find("character").localScale = new Vector3(1, 1, 1);
+            if (!gameObject.CompareTag("Player"))
+                rb.AddTorque(Vector3.one * Random.Range(-.1f, .1f));
+            else
+                transform.Find("character").localScale = new Vector3(1, 1, 1);
 
-                rb.useGravity = false;
+            rb.useGravity = false;
             if (transform.position.y < gameHandler.MaxHeight)
             {
-                /*
-                Vector3 targetPos = new Vector3(transform.position.x, gameHandler.MaxHeight, transform.position.z);
-                transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref vel, smoothFactor);
-                */
-                Vector3 levitation = new Vector3(0,  gameHandler.LevitationForce, 0);
+                Vector3 levitation = new Vector3(0, gameHandler.LevitationForce, 0);
                 rb.AddForce(levitation * Time.fixedDeltaTime, ForceMode.Impulse);
-                
             }
             else
             {
@@ -51,9 +44,12 @@ public class GravityController : MonoBehaviour
         }
         else
         {
-            //if(gameObject.CompareTag("Player"))
-              //  transform.Find("character").localScale = new Vector3(0, 0, 0);
-            
+            if (gameObject.CompareTag("Player"))
+            {
+                if(GetComponent<PlayerController>().isOnGround())
+                    transform.Find("character").localScale = new Vector3(0, 0, 0);  
+            }
+
             rb.useGravity = true;
         }
     }
