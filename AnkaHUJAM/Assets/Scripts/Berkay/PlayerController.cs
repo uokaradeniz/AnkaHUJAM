@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     //public float t;
     public LayerMask ground_layer;
     public Transform orientation;
-    public Transform cameraRotation;
+    private Transform cameraRotation;
 
     float horizontal;
     float vertical;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         capsuleCollider = transform.GetComponent<CapsuleCollider>();
         gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
+        cameraRotation = Camera.main.transform;
     }
 
     void Update()
