@@ -1682,11 +1682,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &1982506069 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1562602059054373493, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
-  m_PrefabInstance: {fileID: 8253394493168349951}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2052764115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,7 +1772,7 @@ PrefabInstance:
     - target: {fileID: 3480680394264463628, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
       propertyPath: orientationTPS
       value: 
-      objectReference: {fileID: 1982506069}
+      objectReference: {fileID: 0}
     - target: {fileID: 3480680394264463629, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1833,7 +1828,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8253394492576828545, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
       propertyPath: smoothFactor
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8253394492576828547, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
       propertyPath: m_Drag
@@ -1893,7 +1888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8253394493768051434, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
       propertyPath: m_Name
-      value: OrientationFPS
+      value: Orientation
       objectReference: {fileID: 0}
     - target: {fileID: 8431666410182211973, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
       propertyPath: m_LocalScale.x

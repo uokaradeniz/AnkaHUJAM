@@ -15,8 +15,7 @@ public class CameraController : MonoBehaviour
 
     private Vector3 vel;
 
-    public Transform orientationTPS;
-    public Transform orientationFPS;
+    public Transform orientation;
 
     private GameHandler gameHandler;
 
@@ -82,7 +81,7 @@ public class CameraController : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, -45f, 45f);
 
         transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
-        orientationTPS.rotation = Quaternion.Euler(0, rotationY, 0);
+        orientation.rotation = Quaternion.Euler(0, rotationY, 0);
     }
 
     void OnTriggerEnter(Collider other)
