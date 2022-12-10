@@ -38,9 +38,9 @@ public class MenuManager : MonoBehaviour
 
     //Grafik ayalarý için fonksiyonlar 
 
-    public void SetQualityLow(int qualityÝndex)
+    public void SetQualityLow(int qualityIndex)
     {
-        QualitySettings.SetQualityLevel(qualityÝndex = 1);
+        QualitySettings.SetQualityLevel(qualityIndex = 1);
 
     }
     public void SetQualityMedium(int qualityÝndex)
