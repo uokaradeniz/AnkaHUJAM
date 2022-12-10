@@ -18,7 +18,7 @@ public class EventController : MonoBehaviour
 
     private void Start()
     {
-        closeableDoor = GameObject.Find("Closeable");
+        closeableDoor = GameObject.Find("Closable");
     }
 
     private void OnTriggerEnter(Collider other)
