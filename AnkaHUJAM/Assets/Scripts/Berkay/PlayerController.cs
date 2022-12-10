@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     //public float t;
     public LayerMask ground_layer;
     public Transform orientation;
+    public Transform cameraRotation;
 
     float horizontal;
     float vertical;
@@ -54,6 +55,10 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Floating", false);
 
         animator.SetFloat("IsWalking", rb.velocity.magnitude);
+
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.y = cameraRotation.rotation.y * 100;
+        transform.rotation = Quaternion.Euler(rotationVector.x, rotationVector.y, rotationVector.z);
 
         if (isOnGround())
             Move();
