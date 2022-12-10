@@ -11,13 +11,9 @@ public class ColorLerp : MonoBehaviour
     [SerializeField] private int index;
     [SerializeField] private float changer;
 
-    private PlayerController playerController;
-   
-    
     void Start()
     {
         image = GetComponent<Image>();
-        playerController = GetComponent<PlayerController>();
     }
 
     void Update()

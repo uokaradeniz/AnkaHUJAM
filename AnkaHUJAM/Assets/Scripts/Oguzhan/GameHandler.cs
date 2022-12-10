@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -55,11 +56,15 @@ public class GameHandler : MonoBehaviour
 
     private GameObject player;
     private Slider oxygenSlider;
+    private TextMeshProUGUI gravityText;
+    private Animator gravTextAnimator;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         oxygenSlider = GameObject.Find("OxygenSlider").GetComponent<Slider>();
+        gravityText = GameObject.Find("GravityText").GetComponent<TextMeshProUGUI>();
+        gravTextAnimator = gravityText.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -67,7 +72,18 @@ public class GameHandler : MonoBehaviour
     {
         oxygenSlider.value = player.GetComponent<PlayerController>().oxygenLevel;
 
-        if (Input.GetButtonDown("Activate Gravity Nullifier") && player.GetComponent<PlayerController>().Rb.velocity.magnitude <= 0.1)
+        if (Input.GetButtonDown("Activate Gravity Nullifier") &&
+            player.GetComponent<PlayerController>().Rb.velocity.magnitude <= 0.1)
             gravityNullified = true;
+        
+        if (gravityNullified)
+        {
+            gravTextAnimator.SetTrigger("ActivateGravText");
+        }
+        else
+        {
+            gravTextAnimator.SetTrigger("DeactivateGravText");
+            gravTextAnimator.ResetTrigger("ActivateGravText");
+        }
     }
 }
