@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float groundDrag;
     public float RotateSpeed;
+    public float t;
     public LayerMask ground_layer;
     public Transform orientation;
 
@@ -82,6 +83,19 @@ public class PlayerController : MonoBehaviour
         return ray_hit;
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "DoorTrigger")
+        {
+            other.isTrigger = false;
+
+            MeshRenderer mr = other.gameObject.GetComponent<MeshRenderer>();
+            mr.enabled = true;
+           
+        }
+    }
+
+    /*
     void RotateByAD()
     {
         if (Input.GetKey(KeyCode.A))
@@ -95,4 +109,5 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    */
 }
