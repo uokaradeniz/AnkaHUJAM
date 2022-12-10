@@ -33,11 +33,13 @@ public class EventController : MonoBehaviour
             Debug.Log("Picked up Weapon!");
             closeableDoor.GetComponent<Collider>().isTrigger = false;
             closeableDoor.GetComponent<MeshRenderer>().enabled = true;
+            Camera.main.transform.Find("Gun").gameObject.SetActive(true);
             Destroy(gameObject);
         }
 
         if (other.CompareTag("Player") && eventType == EventType.KeyPickup)
         {
+            GameObject.Find("Game Handler").GetComponent<GameHandler>().OpenExit();
             Debug.Log("Obtained the key, find the exit!");
             Destroy(gameObject);
         }

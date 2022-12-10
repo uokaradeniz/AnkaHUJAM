@@ -74,8 +74,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveDirection = orientation.forward * vertical + orientation.right * horizontal;
 
-        rb.AddForce(moveDirection.normalized * speed, ForceMode.Impulse);
-
+        rb.velocity = moveDirection.normalized * speed * Time.fixedDeltaTime;
+        
         if (moveDirection != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);

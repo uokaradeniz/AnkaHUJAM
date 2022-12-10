@@ -55,12 +55,14 @@ public class GameHandler : MonoBehaviour
     }
 
     private GameObject player;
+    private GameObject exitDoor;
     private Slider oxygenSlider;
     private TextMeshProUGUI gravityText;
     private Animator gravTextAnimator;
 
     private void Start()
     {
+        exitDoor = GameObject.Find("Exit");
         player = GameObject.FindGameObjectWithTag("Player");
         oxygenSlider = GameObject.Find("OxygenSlider").GetComponent<Slider>();
         gravityText = GameObject.Find("GravityText").GetComponent<TextMeshProUGUI>();
@@ -91,7 +93,10 @@ public class GameHandler : MonoBehaviour
             gravTextAnimator.SetTrigger("DeactivateGravText");
             gravTextAnimator.ResetTrigger("ActivateGravText");
         }
-        
-        
+    }
+
+    public void OpenExit()
+    {
+        Destroy(exitDoor);
     }
 }

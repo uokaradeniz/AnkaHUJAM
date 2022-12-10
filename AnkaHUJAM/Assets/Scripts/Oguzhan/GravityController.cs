@@ -9,7 +9,6 @@ public class GravityController : MonoBehaviour
     private Rigidbody rb;
     private GameHandler gameHandler;
     
-
     // Start is called before the first frame update
     void Start()
     {
