@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
-
     public Rigidbody Rb
     {
         get => rb;
@@ -15,16 +14,13 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
     public float RotateSpeed;
-    //public float t;
     public LayerMask ground_layer;
     public Transform orientation;
     private Transform cameraRotation;
 
     float horizontal;
     float vertical;
-
-    private GameHandler gameHandler;
-
+    
     private CapsuleCollider capsuleCollider;
     private Animator animator;
 
@@ -36,7 +32,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         capsuleCollider = transform.GetComponent<CapsuleCollider>();
-        gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
         cameraRotation = Camera.main.transform;
     }
 
@@ -46,8 +41,6 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
 
         oxygenLevel -= oxygenDepleteRate * Time.deltaTime;
-
-        // RotateByAD();
     }
 
     void FixedUpdate()
