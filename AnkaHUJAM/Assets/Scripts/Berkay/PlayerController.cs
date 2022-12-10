@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public Transform orientation;
     private Transform cameraRotation;
 
+    private float doorTimer;
+    
     float horizontal;
     float vertical;
     
@@ -63,20 +65,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Wasted!s");
+            Debug.Log("Wasted!");
         }
 
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "DoorTrigger")
-        {
-            other.isTrigger = false;
-
-            MeshRenderer mr = other.gameObject.GetComponent<MeshRenderer>();
-            mr.enabled = true;
-        }
     }
     
     void Move()

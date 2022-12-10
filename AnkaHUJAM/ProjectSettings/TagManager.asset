@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - DoorTrigger
-  - gate
   - Ground
   layers:
   - Default

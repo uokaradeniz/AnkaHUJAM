@@ -30,22 +30,16 @@ public class CameraController : MonoBehaviour
 
         // Put the cursor in the middle of the 
         // screen lock and make it unvisible
-        /*
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        */
-
-    }
-
-    void Update()
-    {
-        LookAroundWithMouse();
         
+
     }
 
     void LateUpdate()
     {
         FollowPlayer();
+        LookAroundWithMouse();
     }
 
     void getDistanceFromPlayer()
@@ -86,8 +80,6 @@ public class CameraController : MonoBehaviour
         float newMouseX = Mathf.SmoothDamp(mouseX, -1, ref vel, 0.4f);
         float newMouseY = Mathf.SmoothDamp(mouseY, -1, ref vel, 0.4f);
         
-        // Debug.Log("MouseX: " + mouseX + " MouseY: " + mouseY);
-
         rotationX -= newMouseY;
         rotationY += newMouseX;
 

@@ -12,8 +12,14 @@ public class EventController : MonoBehaviour
         WeaponPickup,
         KeyPickup
     }
-
+    
     [SerializeField] private EventType eventType;
+    private GameObject closeableDoor;
+
+    private void Start()
+    {
+        closeableDoor = GameObject.Find("Closeable");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,6 +31,8 @@ public class EventController : MonoBehaviour
         if (other.CompareTag("Player") && eventType == EventType.WeaponPickup)
         {
             Debug.Log("Picked up Weapon!");
+            closeableDoor.GetComponent<Collider>().isTrigger = false;
+            closeableDoor.GetComponent<MeshRenderer>().enabled = true;
             Destroy(gameObject);
         }
 
