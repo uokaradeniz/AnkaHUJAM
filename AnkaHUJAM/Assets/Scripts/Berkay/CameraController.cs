@@ -13,23 +13,32 @@ public class CameraController : MonoBehaviour
     public float sensX;
     public float sensY;
 
-    public Transform orientation;
-    
+    private Vector3 vel;
+
+    public Transform orientationTPS;
+    public Transform orientationFPS;
+
+    private GameHandler gameHandler;
+
     void Start()
     {
         dist = transform.position - player.transform.position;
+        gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
+
 
         // Put the cursor in the middle of the 
         // screen lock and make it unvisible
+        /*
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        */
     }
 
     void Update()
     {
         LookAroundWithMouse();
     }
-    
+
     void LateUpdate()
     {
         FollowPlayer();
@@ -39,13 +48,20 @@ public class CameraController : MonoBehaviour
     [ContextMenu(nameof(putCameraOnPlayer))]
     void putCameraOnPlayer()
     {
-        transform.position = player.transform.position + 
+        transform.position = player.transform.position +
                              new Vector3(0, (player.transform.localScale.y / 2), 0);
     }
 
     void FollowPlayer()
     {
-        transform.position = player.transform.position + dist;    
+        //if (gameHandler.GravityNullified)
+        //{
+        transform.position = player.transform.position + dist;
+            // if (!player.GetComponent<PlayerController>().isOnGround())
+            //     transform.position = Vector3.SmoothDamp(transform.position, orientationTPS.position, ref vel, .5f);
+            // else if (player.GetComponent<PlayerController>().isOnGround())
+            //     transform.position = Vector3.SmoothDamp(transform.position, orientationFPS.position, ref vel, 0.01f);
+        //}
     }
 
     void LookAroundWithMouse()
@@ -57,8 +73,7 @@ public class CameraController : MonoBehaviour
 
         float newMouseX = Mathf.SmoothDamp(mouseX, -1, ref vel, 0.4f);
         float newMouseY = Mathf.SmoothDamp(mouseY, -1, ref vel, 0.4f);
-
-
+        
         // Debug.Log("MouseX: " + mouseX + " MouseY: " + mouseY);
 
         rotationX -= newMouseY;
@@ -67,7 +82,7 @@ public class CameraController : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, -45f, 45f);
 
         transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
-        orientation.rotation = Quaternion.Euler(0, rotationY, 0);
+        orientationTPS.rotation = Quaternion.Euler(0, rotationY, 0);
     }
 
     void OnTriggerEnter(Collider other)
@@ -76,6 +91,5 @@ public class CameraController : MonoBehaviour
         {
             Debug.Log("DoorTriggered");
         }
-        
     }
 }

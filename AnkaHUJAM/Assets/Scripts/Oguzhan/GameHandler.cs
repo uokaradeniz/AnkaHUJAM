@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,10 +52,17 @@ public class GameHandler : MonoBehaviour
         set => gravEffectDuration = value;
     }
 
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Activate Gravity Nullifier"))
+        if (Input.GetButtonDown("Activate Gravity Nullifier") && player.GetComponent<PlayerController>().Rb.velocity.magnitude <= 0.1)
             gravityNullified = true;
     }
 }
