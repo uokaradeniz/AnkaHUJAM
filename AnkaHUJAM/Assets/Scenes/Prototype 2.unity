@@ -220,6 +220,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68543573}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &80538262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3480680394264463629, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
+  m_PrefabInstance: {fileID: 3480680394949780601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &130640726
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe7c38834da4bf4ab7f1646b8b53d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothFactor: 0
 --- !u!65 &350295958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -995,6 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe7c38834da4bf4ab7f1646b8b53d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothFactor: 0
 --- !u!65 &803925746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1377,6 +1384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe7c38834da4bf4ab7f1646b8b53d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothFactor: 0
 --- !u!65 &1264126854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1504,6 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe7c38834da4bf4ab7f1646b8b53d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothFactor: 0
 --- !u!65 &1534896707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2206,6 +2215,10 @@ PrefabInstance:
       propertyPath: t
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8253394492576828548, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
+      propertyPath: cameraRotation
+      value: 
+      objectReference: {fileID: 80538262}
     - target: {fileID: 8253394492576828549, guid: c4bf78258cff26e4fbae596be2000409, type: 3}
       propertyPath: m_RootOrder
       value: 12

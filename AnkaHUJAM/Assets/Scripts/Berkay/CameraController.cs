@@ -53,14 +53,7 @@ public class CameraController : MonoBehaviour
 
     void FollowPlayer()
     {
-        //if (gameHandler.GravityNullified)
-        //{
         transform.position = player.transform.position + dist;
-            // if (!player.GetComponent<PlayerController>().isOnGround())
-            //     transform.position = Vector3.SmoothDamp(transform.position, orientationTPS.position, ref vel, .5f);
-            // else if (player.GetComponent<PlayerController>().isOnGround())
-            //     transform.position = Vector3.SmoothDamp(transform.position, orientationFPS.position, ref vel, 0.01f);
-        //}
     }
 
     void LookAroundWithMouse()
