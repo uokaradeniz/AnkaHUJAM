@@ -79,11 +79,19 @@ public class GameHandler : MonoBehaviour
         if (gravityNullified)
         {
             gravTextAnimator.SetTrigger("ActivateGravText");
+            GravEffectTimer += Time.deltaTime;
+            if (GravEffectTimer >= GravEffectDuration)
+            {
+                GravityNullified = false;
+                GravEffectTimer = 0;
+            }
         }
         else
         {
             gravTextAnimator.SetTrigger("DeactivateGravText");
             gravTextAnimator.ResetTrigger("ActivateGravText");
         }
+        
+        
     }
 }

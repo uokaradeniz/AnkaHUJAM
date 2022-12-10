@@ -8,6 +8,7 @@ public class GravityController : MonoBehaviour
 {
     private Rigidbody rb;
     private GameHandler gameHandler;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -31,15 +32,6 @@ public class GravityController : MonoBehaviour
             {
                 Vector3 levitation = new Vector3(0, gameHandler.LevitationForce, 0);
                 rb.AddForce(levitation * Time.fixedDeltaTime, ForceMode.Impulse);
-            }
-            else
-            {
-                gameHandler.GravEffectTimer += Time.deltaTime;
-                if (gameHandler.GravEffectTimer >= gameHandler.GravEffectDuration)
-                {
-                    gameHandler.GravityNullified = false;
-                    gameHandler.GravEffectTimer = 0;
-                }
             }
         }
         else

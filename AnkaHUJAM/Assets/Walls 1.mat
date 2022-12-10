@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Walls
+  m_Name: Walls 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _NORMALMAP
@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d33e08be65e97804a85378b191a3d007, type: 3}
+        m_Texture: {fileID: 2800000, guid: 513eac30a6f7da847b09abff25d4573e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,11 +39,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 20}
+        m_Scale: {x: 1, y: 16.5}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d01a91858c61460438b22a4f194d8d22, type: 3}
-        m_Scale: {x: 1, y: 20}
+        m_Texture: {fileID: 2800000, guid: fa3f147937adfe8498387d562646b299, type: 3}
+        m_Scale: {x: 1, y: 16.5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
