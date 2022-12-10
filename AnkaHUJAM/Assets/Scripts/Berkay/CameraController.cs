@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject player;
-    Vector3 dist;
 
     float rotationX;
     float rotationY;
@@ -16,12 +15,16 @@ public class CameraController : MonoBehaviour
     private Vector3 vel;
 
     public Transform orientation;
+    public Transform tpsOffset;
 
     private GameHandler gameHandler;
 
+    Vector3 dist;
+    Vector3 initialPos;
+
     void Start()
     {
-        dist = transform.position - player.transform.position;
+        getDistanceFromPlayer();
         gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
 
 
@@ -31,16 +34,23 @@ public class CameraController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         */
+
     }
 
     void Update()
     {
         LookAroundWithMouse();
+        
     }
 
     void LateUpdate()
     {
         FollowPlayer();
+    }
+
+    void getDistanceFromPlayer()
+    {
+        dist = transform.position - player.transform.position;
     }
 
 
@@ -54,6 +64,16 @@ public class CameraController : MonoBehaviour
     void FollowPlayer()
     {
         transform.position = player.transform.position + dist;
+        if (player.GetComponent<PlayerController>().isOnGround())
+        {
+            transform.position = orientation.position;
+            getDistanceFromPlayer();
+        }
+        else
+        {
+            transform.position = tpsOffset.position;
+            rotationY = Mathf.Clamp(rotationY, -135f, 135f);
+        }
     }
 
     void LookAroundWithMouse()
@@ -84,4 +104,5 @@ public class CameraController : MonoBehaviour
             Debug.Log("DoorTriggered");
         }
     }
+
 }

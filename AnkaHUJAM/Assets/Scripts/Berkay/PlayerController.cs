@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
     public float RotateSpeed;
-    //public float t;
     public LayerMask ground_layer;
     public Transform orientation;
     private Transform cameraRotation;
@@ -31,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public float oxygenLevel = 100;
     public float oxygenDepleteRate;
 
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         capsuleCollider = transform.GetComponent<CapsuleCollider>();
         gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
         cameraRotation = Camera.main.transform;
+
     }
 
     void Update()
@@ -46,6 +47,9 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
 
         oxygenLevel -= oxygenDepleteRate * Time.deltaTime;
+
+        oxygenLevel -= oxygenDepleteRate * Time.deltaTime;
+
 
         // RotateByAD();
     }
@@ -110,4 +114,5 @@ public class PlayerController : MonoBehaviour
 
         return ray_hit;
     }
+
 }
