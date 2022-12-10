@@ -27,9 +27,6 @@ public class Timer_Controller : MonoBehaviour
         {
             heal_remaining -= Time.deltaTime;
             heal_linear_image.fillAmount = heal_remaining / max_heal;
-
         }
-        
-
     }
 }

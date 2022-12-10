@@ -28,9 +28,11 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider capsuleCollider;
     private Animator animator;
 
+    public float oxygenLevel = 100;
+    public float oxygenDepleteRate;
+
     void Start()
     {
-
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         capsuleCollider = transform.GetComponent<CapsuleCollider>();
@@ -43,44 +45,36 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        
+        oxygenLevel -= oxygenDepleteRate * Time.deltaTime;
 
         // RotateByAD();
     }
 
     void FixedUpdate()
     {
-        if (!isOnGround())
-            animator.SetBool("Floating", true);
-        else
-            animator.SetBool("Floating", false);
-
-        animator.SetFloat("IsWalking", rb.velocity.magnitude);
-
-        var rotationVector = transform.rotation.eulerAngles;
-        rotationVector.y = cameraRotation.rotation.y * 100;
-        transform.rotation = Quaternion.Euler(rotationVector.x, rotationVector.y, rotationVector.z);
-
-        if (isOnGround())
-            Move();
-
-        /*
-        void RotateByAD()
+        if (oxygenLevel > 0)
         {
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.Rotate(-Vector3.up * RotateSpeed * Time.deltaTime);
-            }
-    
-            else if (Input.GetKey(KeyCode.D))
-            {
-                transform.Rotate(Vector3.up * RotateSpeed * Time.deltaTime);
-            }
-    
+            if (!isOnGround())
+                animator.SetBool("Floating", true);
+            else
+                animator.SetBool("Floating", false);
+
+            animator.SetFloat("IsWalking", rb.velocity.magnitude);
+
+            var rotationVector = transform.rotation.eulerAngles;
+            rotationVector.y = cameraRotation.rotation.y * 100;
+            transform.rotation = Quaternion.Euler(rotationVector.x, rotationVector.y, rotationVector.z);
+
+            if (isOnGround())
+                Move();
         }
-        */
+        else
+        {
+            Debug.Log("Wasted!s");
+        }
+
     }
-    
+
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "DoorTrigger")
