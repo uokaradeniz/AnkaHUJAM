@@ -59,9 +59,22 @@ public class GameHandler : MonoBehaviour
     private Slider oxygenSlider;
     private TextMeshProUGUI gravityText;
     private Animator gravTextAnimator;
+    public bool keycardFound;
+    public bool aPanelIsOpen;
+
+    public TextMeshProUGUI weaponText;
+    public TextMeshProUGUI keycardText;
+    public Image finishPanel;
+    public TextMeshProUGUI exitDoorText;
+    public TextMeshProUGUI gravityKeyText;
 
     private void Start()
     {
+        exitDoorText = GameObject.Find("ExitDoorText").GetComponent<TextMeshProUGUI>();
+        keycardText = GameObject.Find("KeycardText").GetComponent<TextMeshProUGUI>();
+        finishPanel = GameObject.Find("FinishPanel").GetComponent<Image>();
+        weaponText = GameObject.Find("WeaponText").GetComponent<TextMeshProUGUI>();
+        gravityKeyText = GameObject.Find("GravityKeyText").GetComponent<TextMeshProUGUI>();
         exitDoor = GameObject.Find("Exit");
         player = GameObject.FindGameObjectWithTag("Player");
         oxygenSlider = GameObject.Find("OxygenSlider").GetComponent<Slider>();
@@ -72,6 +85,19 @@ public class GameHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (aPanelIsOpen && Input.GetButtonDown("ClosePanel"))
+        {
+            aPanelIsOpen = false;
+            if(keycardText.enabled)
+                CloseKeycardText();
+            
+            if(weaponText.enabled)
+                CloseWeaponText();
+            
+            if(exitDoorText.enabled)
+                CloseExitDoorText();
+        }
+        
         oxygenSlider.value = player.GetComponent<PlayerController>().oxygenLevel;
 
         if (Input.GetButtonDown("Activate Gravity Nullifier") &&
@@ -98,5 +124,18 @@ public class GameHandler : MonoBehaviour
     public void OpenExit()
     {
         Destroy(exitDoor);
+    }
+
+    public void CloseWeaponText()
+    {
+        weaponText.enabled = false;
+    }
+    public void CloseExitDoorText()
+    {
+        exitDoorText.enabled = false;
+    }
+    public void CloseKeycardText()
+    {
+        keycardText.enabled = false;
     }
 }

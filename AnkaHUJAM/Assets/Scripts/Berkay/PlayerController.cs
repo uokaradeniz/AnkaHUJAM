@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     
     private CapsuleCollider capsuleCollider;
     private Animator animator;
-
+    private GameHandler gameHandler;
+    
     public float oxygenLevel = 100;
     public float oxygenDepleteRate;
 
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         capsuleCollider = transform.GetComponent<CapsuleCollider>();
         cameraRotation = Camera.main.transform;
+        gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
     }
 
     void Update()
@@ -49,6 +51,11 @@ public class PlayerController : MonoBehaviour
     {
         if (oxygenLevel > 0)
         {
+            if (rb.velocity.magnitude <= 0.1)
+                gameHandler.gravityKeyText.enabled = true;
+            else
+                gameHandler.gravityKeyText.enabled = false;
+
             if (!isOnGround())
                 animator.SetBool("Floating", true);
             else

@@ -32,8 +32,6 @@ public class CameraController : MonoBehaviour
         // screen lock and make it unvisible
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
-
     }
 
     void LateUpdate()
