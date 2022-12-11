@@ -15,7 +15,7 @@ public class BeforeMenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
             BeforeMenuCanvas.SetActive(false);
 
         }
