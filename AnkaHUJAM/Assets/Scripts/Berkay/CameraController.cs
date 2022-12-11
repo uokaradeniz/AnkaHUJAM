@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
 
     Vector3 dist;
     Vector3 initialPos;
+    float oxygenValue;
 
     void Start()
     {
@@ -34,10 +35,17 @@ public class CameraController : MonoBehaviour
         Cursor.visible = false;
     }
 
+    void Update()
+    {
+        oxygenValue = player.GetComponent<PlayerController>().oxygenLevel;
+    }
+
     void LateUpdate()
     {
         FollowPlayer();
-        LookAroundWithMouse();
+
+        if (oxygenValue > 0)
+            LookAroundWithMouse();
     }
 
     void getDistanceFromPlayer()
