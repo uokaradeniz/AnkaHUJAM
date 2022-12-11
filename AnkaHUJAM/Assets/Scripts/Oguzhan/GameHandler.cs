@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,11 +63,15 @@ public class GameHandler : MonoBehaviour
     public bool keycardFound;
     public bool aPanelIsOpen;
 
-    public TextMeshProUGUI weaponText;
-    public TextMeshProUGUI keycardText;
+    [HideInInspector]public TextMeshProUGUI weaponText;
+    [HideInInspector]public TextMeshProUGUI keycardText;
     public Image finishPanel;
-    public TextMeshProUGUI exitDoorText;
-    public TextMeshProUGUI gravityKeyText;
+    [HideInInspector]public TextMeshProUGUI exitDoorText;
+    [HideInInspector]public TextMeshProUGUI gravityKeyText;
+    
+    public Transform spawnPos;
+    private float enemySpawnTimer;
+    public float enemySpawnThreshold;
 
     private void Start()
     {
@@ -85,6 +90,13 @@ public class GameHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemySpawnTimer += Time.deltaTime;
+        if (enemySpawnTimer >= enemySpawnThreshold)
+        {
+            SpawnEnemy();
+            enemySpawnTimer = 0;
+        }
+        
         if (aPanelIsOpen && Input.GetButtonDown("ClosePanel"))
         {
             aPanelIsOpen = false;
@@ -142,5 +154,10 @@ public class GameHandler : MonoBehaviour
     public void PlayDeathClip()
     {
         GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Dreamon"));
+    }
+
+    public void SpawnEnemy()
+    {
+        Instantiate(Resources.Load("Enemy"), spawnPos.position, Quaternion.identity);
     }
 }
