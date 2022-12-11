@@ -22,15 +22,20 @@ public class GravityController : MonoBehaviour
         if (gameHandler.GravityNullified)
         {
             if (!gameObject.CompareTag("Player"))
-                rb.AddTorque(Vector3.one * Random.Range(-.1f, .1f));
+                rb.AddTorque(Vector3.one * Random.Range(-.4f, .4f));
             else
                 transform.Find("character").localScale = new Vector3(1, 1, 1);
 
             rb.useGravity = false;
             if (transform.position.y < gameHandler.MaxHeight)
             {
+                /*
                 Vector3 levitation = new Vector3(0, gameHandler.LevitationForce, 0);
                 rb.AddForce(levitation * Time.fixedDeltaTime, ForceMode.Impulse);
+                */
+                Vector3 levitation = new Vector3(0, gameHandler.LevitationForce, 0);
+                transform.position = Vector3.MoveTowards(transform.position,
+                    transform.position + new Vector3(0, gameHandler.MaxHeight, 0), gameHandler.LevitationForce);
             }
         }
         else
