@@ -44,9 +44,9 @@ public class EnemyAI : MonoBehaviour
             navMesh.isStopped = false;
 
 
-        if (navMesh.speed >= 5 && !gameHandler.GravityNullified)
+        if (navMesh.speed >= 10 && !gameHandler.GravityNullified)
             GetComponent<Animator>().SetFloat("Walk", 1);
-        else if(navMesh.speed < 5 || gameHandler.GravityNullified)
+        else if(navMesh.speed < 10 || gameHandler.GravityNullified)
             GetComponent<Animator>().SetFloat("Walk", 0);
 
         if (Vector3.Distance(player.transform.position, transform.position) < 4.5 && !gameHandler.GravityNullified)
@@ -56,7 +56,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            navMesh.speed = 6;
+            navMesh.speed = 10;
             GetComponent<Animator>().SetBool("Attack", false);
         }
     }

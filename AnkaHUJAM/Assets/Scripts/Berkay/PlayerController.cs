@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private GameHandler gameHandler;
     private float stepTimer;
-    public float oxygenLevel = 100;
+    public float oxygenLevel;
     public float oxygenDepleteRate;
 
     void Start()

@@ -9,7 +9,6 @@ public class GravityController : MonoBehaviour
     private Rigidbody rb;
     private GameHandler gameHandler;
     bool temp;
-
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,7 @@ public class GravityController : MonoBehaviour
         if (gameHandler.GravityNullified)
         {
             if (!gameObject.CompareTag("Player"))
-                rb.AddTorque(Vector3.one * Random.Range(-.4f, .4f));
+                rb.AddTorque(Vector3.one * Random.Range(-1f, 1f));
             else
             {
                 transform.Find("character").localScale = new Vector3(1, 1, 1);

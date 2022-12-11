@@ -3,7 +3,12 @@ guid: 1f8b0d5d83f639748a79d05a06566ffe
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glowRed
+    second: {fileID: 2100000, guid: ab9020e1c0a097d46b5af01cd1994ceb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

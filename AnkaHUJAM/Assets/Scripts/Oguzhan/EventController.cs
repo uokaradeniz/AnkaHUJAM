@@ -47,7 +47,6 @@ public class EventController : MonoBehaviour
             gameHandler.aPanelIsOpen = true;
             closeableDoor.GetComponent<Collider>().isTrigger = false;
             closeableDoor.GetComponent<MeshRenderer>().enabled = true;
-            playerController.oxygenLevel = 100;
             Camera.main.transform.Find("Gun").gameObject.SetActive(true);
             
             Destroy(gameObject);
@@ -72,6 +71,7 @@ public class EventController : MonoBehaviour
         {
             gameHandler.finishPanel.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
             gameHandler.aPanelIsOpen = true;
+            Time.timeScale = 0;
         }
     }
 }
