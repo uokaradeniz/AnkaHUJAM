@@ -29,12 +29,12 @@ public class EnemyAI : MonoBehaviour
             {
                 if (health <= 0)
                 {
-                    navMesh.ResetPath();
-                    GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("MonsterDeath"));
-                    GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
                     Instantiate(Resources.Load("EnemyHitFX"), transform.position,
                         transform.rotation);
                     transform.position = gameHandler.spawnPos.position;
+                    navMesh.ResetPath();
+                    GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("MonsterDeath"));
+                    GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
                     health = 5;
                 }
                 else

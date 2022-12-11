@@ -39,7 +39,7 @@ public class GunControl : MonoBehaviour
     {
         RaycastHit ray_hit;
         Instantiate(Resources.Load("LaserBeamVFX"), muzzle.transform.position, muzzle.transform.rotation);
-        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out ray_hit, 15))
+        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out ray_hit, Mathf.Infinity))
         {
             if (ray_hit.collider.CompareTag("Breakable"))
             {
