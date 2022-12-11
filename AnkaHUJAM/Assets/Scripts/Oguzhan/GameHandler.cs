@@ -71,6 +71,7 @@ public class GameHandler : MonoBehaviour
     
     public Transform spawnPos;
 
+    public bool gameFinished;
     private void Start()
     {
         exitDoorText = GameObject.Find("ExitDoorText").GetComponent<TextMeshProUGUI>();
@@ -144,6 +145,7 @@ public class GameHandler : MonoBehaviour
 
     public void PlayDeathClip()
     {
+        GetComponent<AudioSource>().Stop();
         GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Dreamon"));
     }
 }

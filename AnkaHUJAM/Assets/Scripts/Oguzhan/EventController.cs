@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EventController : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class EventController : MonoBehaviour
             gameHandler.aPanelIsOpen = true;
             closeableDoor.GetComponent<Collider>().isTrigger = false;
             closeableDoor.GetComponent<MeshRenderer>().enabled = true;
+            closeableDoor.GetComponent<NavMeshObstacle>().carving = true;
             Camera.main.transform.Find("Gun").gameObject.SetActive(true);
             
             Destroy(gameObject);
@@ -71,7 +73,7 @@ public class EventController : MonoBehaviour
         {
             gameHandler.finishPanel.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
             gameHandler.aPanelIsOpen = true;
-            Time.timeScale = 0;
+            gameHandler.gameFinished = true;
         }
     }
 }

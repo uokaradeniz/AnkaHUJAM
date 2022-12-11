@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028699081, g: 0.0027488684, b: 0.057238407, a: 1}
+  m_IndirectSpecularColor: {r: 0.028685186, g: 0.0027449564, b: 0.05723044, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -358,11 +358,10 @@ MonoBehaviour:
     system built under the space base in order jump high and  find your way out of
     the maze. Only to use it in necessity as you have to wait for system to ready
     up after every use. Remember that you have limited amount of oxygen and must
-    escape before you run out of fresh air. Your oxygen tank will be filled when
-    you obtain certain tool(s) throughout the maze. Watch Your Back, Good luck!
+    escape before you run out of fresh air.  Certain tool(s) throughout the maze
+    to escape. Watch Your Back, Good luck!
 
-    Press
-    ''Enter'' to continue
+    Press ''Enter'' to continue
 
 '
   m_isRightToLeft: 0

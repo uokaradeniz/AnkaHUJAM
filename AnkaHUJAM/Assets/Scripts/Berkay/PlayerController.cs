@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -49,34 +48,37 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (oxygenLevel > 0)
+        if (!gameHandler.gameFinished)
         {
-            if (rb.velocity.magnitude <= 0.1)
-                gameHandler.gravityKeyText.enabled = true;
-            else
+            if (oxygenLevel > 0)
             {
-                gameHandler.gravityKeyText.enabled = false;
-                stepTimer += Time.deltaTime;
-                if (stepTimer >= 0.75 && isOnGround())
+                if (rb.velocity.magnitude <= 0.1)
+                    gameHandler.gravityKeyText.enabled = true;
+                else
                 {
-                    GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Steps"));
-                    stepTimer = 0;
+                    gameHandler.gravityKeyText.enabled = false;
+                    stepTimer += Time.deltaTime;
+                    if (stepTimer >= 0.75 && isOnGround())
+                    {
+                        GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Steps"));
+                        stepTimer = 0;
+                    }
                 }
+
+                if (!isOnGround() && gameHandler.GravityNullified)
+                    animator.SetBool("Floating", true);
+                else
+                    animator.SetBool("Floating", false);
+
+                animator.SetFloat("IsWalking", rb.velocity.magnitude);
+
+                var rotationVector = transform.rotation.eulerAngles;
+                rotationVector.y = cameraRotation.rotation.y * 100;
+                transform.rotation = Quaternion.Euler(rotationVector.x, rotationVector.y, rotationVector.z);
+
+                if (isOnGround())
+                    Move();
             }
-
-            if (!isOnGround() && gameHandler.GravityNullified)
-                animator.SetBool("Floating", true);
-            else
-                animator.SetBool("Floating", false);
-
-            animator.SetFloat("IsWalking", rb.velocity.magnitude);
-
-            var rotationVector = transform.rotation.eulerAngles;
-            rotationVector.y = cameraRotation.rotation.y * 100;
-            transform.rotation = Quaternion.Euler(rotationVector.x, rotationVector.y, rotationVector.z);
-
-            if (isOnGround())
-                Move();
         }
     }
     

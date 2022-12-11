@@ -44,7 +44,7 @@ public class CameraController : MonoBehaviour
     {
         FollowPlayer();
 
-        if (oxygenValue > 0)
+        if (oxygenValue > 0 && !gameHandler.gameFinished)
             LookAroundWithMouse();
     }
 
