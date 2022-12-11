@@ -3780,6 +3780,7 @@ GameObject:
   - component: {fileID: 603652631}
   - component: {fileID: 603652633}
   - component: {fileID: 603652632}
+  - component: {fileID: 603652634}
   m_Layer: 0
   m_Name: Sphere_001_1 (68)
   m_TagString: Untagged
@@ -3852,6 +3853,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603652630}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &603652634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603652630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!4 &608774060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2054154105872673784, guid: 526537a734b2a124f8985ccf7e18b880, type: 3}
@@ -4075,6 +4091,7 @@ GameObject:
   - component: {fileID: 664525452}
   - component: {fileID: 664525454}
   - component: {fileID: 664525453}
+  - component: {fileID: 664525455}
   m_Layer: 0
   m_Name: Sphere_001_1 (32)
   m_TagString: Untagged
@@ -4147,6 +4164,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664525451}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &664525455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664525451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1 &666262815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4158,6 +4190,7 @@ GameObject:
   - component: {fileID: 666262816}
   - component: {fileID: 666262818}
   - component: {fileID: 666262817}
+  - component: {fileID: 666262819}
   m_Layer: 0
   m_Name: Sphere_001_1 (7)
   m_TagString: Untagged
@@ -4230,6 +4263,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666262815}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &666262819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666262815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: -0.12
+  randomNumY: 0.07
+  randomNumZ: -0.03
 --- !u!1 &673696827
 GameObject:
   m_ObjectHideFlags: 0
@@ -5387,6 +5435,7 @@ GameObject:
   - component: {fileID: 767397327}
   - component: {fileID: 767397329}
   - component: {fileID: 767397328}
+  - component: {fileID: 767397330}
   m_Layer: 0
   m_Name: Sphere_001_1 (19)
   m_TagString: Untagged
@@ -5459,6 +5508,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767397326}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &767397330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767397326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: -0.12
+  randomNumY: 0.07
+  randomNumZ: -0.03
 --- !u!1001 &767621137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7053,6 +7117,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c092d28c8a3cbfd45b0d97d38f38002f, type: 3}
   m_PrefabInstance: {fileID: 1214120818}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &975915775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ad53b7376785020449260ea59b067143, type: 3}
+  m_PrefabInstance: {fileID: 1351744684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &975915778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975915775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.02
+  randomNumY: 0
+  randomNumZ: -0.005
 --- !u!1 &979412345
 GameObject:
   m_ObjectHideFlags: 0
@@ -8662,6 +8746,7 @@ GameObject:
   - component: {fileID: 1187535298}
   - component: {fileID: 1187535300}
   - component: {fileID: 1187535299}
+  - component: {fileID: 1187535301}
   m_Layer: 0
   m_Name: Sphere_001_1 (31)
   m_TagString: Untagged
@@ -8734,6 +8819,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187535297}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1187535301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187535297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: -0.12
+  randomNumY: 0.07
+  randomNumZ: -0.03
 --- !u!1001 &1188421882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9521,6 +9621,7 @@ GameObject:
   - component: {fileID: 1238577005}
   - component: {fileID: 1238577007}
   - component: {fileID: 1238577006}
+  - component: {fileID: 1238577008}
   m_Layer: 0
   m_Name: Sphere_001_1 (37)
   m_TagString: Untagged
@@ -9593,6 +9694,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238577004}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1238577008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238577004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1001 &1278851971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10479,6 +10595,7 @@ GameObject:
   - component: {fileID: 1368460033}
   - component: {fileID: 1368460035}
   - component: {fileID: 1368460034}
+  - component: {fileID: 1368460036}
   m_Layer: 0
   m_Name: Sphere_001_1 (29)
   m_TagString: Untagged
@@ -10551,6 +10668,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368460032}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1368460036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368460032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1001 &1379616985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10636,6 +10768,7 @@ GameObject:
   - component: {fileID: 1384248448}
   - component: {fileID: 1384248450}
   - component: {fileID: 1384248449}
+  - component: {fileID: 1384248451}
   m_Layer: 0
   m_Name: Sphere_001_1 (12)
   m_TagString: Untagged
@@ -10708,6 +10841,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384248447}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1384248451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384248447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1001 &1404071950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11381,6 +11529,7 @@ GameObject:
   - component: {fileID: 1479726687}
   - component: {fileID: 1479726689}
   - component: {fileID: 1479726688}
+  - component: {fileID: 1479726690}
   m_Layer: 0
   m_Name: Sphere_001_1 (16)
   m_TagString: Untagged
@@ -11453,6 +11602,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479726686}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1479726690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479726686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: -0.12
+  randomNumY: 0.07
+  randomNumZ: -0.03
 --- !u!1001 &1491102840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12154,6 +12318,7 @@ GameObject:
   - component: {fileID: 1602427042}
   - component: {fileID: 1602427044}
   - component: {fileID: 1602427043}
+  - component: {fileID: 1602427045}
   m_Layer: 0
   m_Name: Sphere_001_1 (33)
   m_TagString: Untagged
@@ -12226,6 +12391,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602427041}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1602427045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602427041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1001 &1610381912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12423,6 +12603,7 @@ GameObject:
   - component: {fileID: 1632301712}
   - component: {fileID: 1632301714}
   - component: {fileID: 1632301713}
+  - component: {fileID: 1632301715}
   m_Layer: 0
   m_Name: Sphere_001_1 (25)
   m_TagString: Untagged
@@ -12495,6 +12676,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632301711}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1632301715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632301711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1001 &1646683096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17810,6 +18006,7 @@ GameObject:
   - component: {fileID: 1720814702}
   - component: {fileID: 1720814704}
   - component: {fileID: 1720814703}
+  - component: {fileID: 1720814705}
   m_Layer: 0
   m_Name: Sphere_001_1 (70)
   m_TagString: Untagged
@@ -17882,6 +18079,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720814701}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1720814705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720814701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1001 &1720846934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18041,6 +18253,7 @@ GameObject:
   - component: {fileID: 1735001165}
   - component: {fileID: 1735001167}
   - component: {fileID: 1735001166}
+  - component: {fileID: 1735001168}
   m_Layer: 0
   m_Name: Sphere_001_1 (3)
   m_TagString: Untagged
@@ -18113,6 +18326,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735001164}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1735001168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735001164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1001 &1779582594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18480,6 +18708,7 @@ GameObject:
   - component: {fileID: 1815087519}
   - component: {fileID: 1815087521}
   - component: {fileID: 1815087520}
+  - component: {fileID: 1815087522}
   m_Layer: 0
   m_Name: Sphere_001_1 (60)
   m_TagString: Untagged
@@ -18552,6 +18781,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815087518}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1815087522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815087518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1 &1820647979
 GameObject:
   m_ObjectHideFlags: 0
@@ -19043,6 +19287,7 @@ GameObject:
   - component: {fileID: 1857864764}
   - component: {fileID: 1857864766}
   - component: {fileID: 1857864765}
+  - component: {fileID: 1857864767}
   m_Layer: 0
   m_Name: Sphere_001_1 (5)
   m_TagString: Untagged
@@ -19115,6 +19360,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857864763}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &1857864767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857864763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1001 &1858898337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21031,6 +21291,7 @@ GameObject:
   - component: {fileID: 2064355518}
   - component: {fileID: 2064355520}
   - component: {fileID: 2064355519}
+  - component: {fileID: 2064355521}
   m_Layer: 0
   m_Name: Sphere_001_1 (41)
   m_TagString: Untagged
@@ -21103,6 +21364,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064355517}
   m_Mesh: {fileID: 2992871556460577624, guid: 0c82d39ac4d26cd4f837849bd2283bf9, type: 3}
+--- !u!114 &2064355521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064355517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8997fdc166d7d4542ac08fae1ad2e596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomNumX: 0.04
+  randomNumY: 0.09
+  randomNumZ: 0.05
 --- !u!1001 &2065116450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38286,6 +38562,10 @@ PrefabInstance:
     - target: {fileID: 5533283579367042860, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533283579367042860, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5533283580158910170, guid: f6038ff0b5db23a4792ae3e28acb81e8, type: 3}
       propertyPath: m_Layer

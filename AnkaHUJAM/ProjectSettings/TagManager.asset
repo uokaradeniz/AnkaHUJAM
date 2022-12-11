@@ -9,6 +9,7 @@ TagManager:
   - Breakable
   - Key
   - Enemy
+  - Asteroid
   layers:
   - Default
   - TransparentFX
