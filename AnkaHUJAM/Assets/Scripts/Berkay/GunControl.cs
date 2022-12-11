@@ -24,7 +24,7 @@ public class GunControl : MonoBehaviour
         else
             transform.localScale = new Vector3(0, 0, 0);
 
-        if (!gameHandler.GravityNullified)
+        if (!gameHandler.GravityNullified && !gameHandler.gameFinished && playerController.oxygenLevel > 0)
         {
             if (Input.GetButtonDown("Fire1"))
             {
