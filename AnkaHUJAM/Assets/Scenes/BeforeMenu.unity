@@ -359,10 +359,10 @@ MonoBehaviour:
     the maze. Only to use it in necessity as you have to wait for system to ready
     up after every use. Remember that you have limited amount of oxygen and must
     escape before you run out of fresh air. Your oxygen tank will be filled when
-    you obtain certain tool(s) throughout the maze. Good luck!
+    you obtain certain tool(s) throughout the maze. Watch Your Back, Good luck!
 
-    (Press Enter
-    to continue)
+    Press
+    ''Enter'' to continue
 
 '
   m_isRightToLeft: 0
