@@ -78,11 +78,6 @@ public class PlayerController : MonoBehaviour
             if (isOnGround())
                 Move();
         }
-        else
-        {
-            Debug.Log("Wasted!");
-        }
-
     }
     
     void Move()
