@@ -45,8 +45,11 @@ public class GunControl : MonoBehaviour
             lineRenderer.SetPosition(0, muzzle.transform.position);
             lineRenderer.SetPosition(1, ray_hit.point);
             Invoke("CloseLineRenderer",0.1f);
-            if(ray_hit.collider.CompareTag("Breakable"))
+            if(ray_hit.collider.CompareTag("Breakable")) {
                 Destroy(ray_hit.collider.gameObject);
+                Instantiate(Resources.Load("WallBreakFX"), ray_hit.collider.transform.position,
+                    ray_hit.collider.transform.rotation);
+            }
         }
     }
 
