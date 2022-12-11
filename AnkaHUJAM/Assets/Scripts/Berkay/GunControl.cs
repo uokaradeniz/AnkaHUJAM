@@ -31,6 +31,7 @@ public class GunControl : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 lineRenderer.enabled = true;
+                GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Voce"));
                 Shoot();
             }
         }
