@@ -18,11 +18,13 @@ public class EventController : MonoBehaviour
     [SerializeField] private EventType eventType;
     private GameObject closeableDoor;
     private GameHandler gameHandler;
+    private PlayerController playerController;
     
     private void Start()
     {
         gameHandler =  GameObject.Find("Game Handler").GetComponent<GameHandler>();
         closeableDoor = GameObject.Find("Closable");
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -36,6 +38,7 @@ public class EventController : MonoBehaviour
         if (other.CompareTag("Player") && eventType == EventType.DeathTrap)
         {
             gameHandler.PlayDeathClip();
+            playerController.oxygenLevel = 0;
         }
 
         if (other.CompareTag("Player") && eventType == EventType.WeaponPickup)
@@ -44,7 +47,9 @@ public class EventController : MonoBehaviour
             gameHandler.aPanelIsOpen = true;
             closeableDoor.GetComponent<Collider>().isTrigger = false;
             closeableDoor.GetComponent<MeshRenderer>().enabled = true;
+            playerController.oxygenLevel = 100;
             Camera.main.transform.Find("Gun").gameObject.SetActive(true);
+            
             Destroy(gameObject);
         }
 

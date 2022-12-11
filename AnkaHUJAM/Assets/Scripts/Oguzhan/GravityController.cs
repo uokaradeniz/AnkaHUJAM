@@ -29,10 +29,6 @@ public class GravityController : MonoBehaviour
             rb.useGravity = false;
             if (transform.position.y < gameHandler.MaxHeight)
             {
-                /*
-                Vector3 levitation = new Vector3(0, gameHandler.LevitationForce, 0);
-                rb.AddForce(levitation * Time.fixedDeltaTime, ForceMode.Impulse);
-                */
                 Vector3 levitation = new Vector3(0, gameHandler.LevitationForce, 0);
                 transform.position = Vector3.MoveTowards(transform.position,
                     transform.position + new Vector3(0, gameHandler.MaxHeight, 0), gameHandler.LevitationForce);

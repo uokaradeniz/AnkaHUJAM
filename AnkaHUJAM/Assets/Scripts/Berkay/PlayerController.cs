@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider capsuleCollider;
     private Animator animator;
     private GameHandler gameHandler;
-    
+    private float stepTimer;
     public float oxygenLevel = 100;
     public float oxygenDepleteRate;
 
@@ -54,7 +54,15 @@ public class PlayerController : MonoBehaviour
             if (rb.velocity.magnitude <= 0.1)
                 gameHandler.gravityKeyText.enabled = true;
             else
+            {
                 gameHandler.gravityKeyText.enabled = false;
+                stepTimer += Time.deltaTime;
+                if (stepTimer >= 0.75 && isOnGround())
+                {
+                    GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Steps"));
+                    stepTimer = 0;
+                }
+            }
 
             if (!isOnGround() && gameHandler.GravityNullified)
                 animator.SetBool("Floating", true);
