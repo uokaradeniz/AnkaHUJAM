@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
                 Quaternion.RotateTowards(transform.rotation, toRotation, RotateSpeed * Time.deltaTime);
         }
     }
-    
+
     public bool isOnGround()
     {
         float extra_height = 0.1f;

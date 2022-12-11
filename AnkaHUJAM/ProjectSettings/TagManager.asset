@@ -8,7 +8,11 @@ TagManager:
   - DoorTrigger
   - Breakable
   - Key
+<<<<<<< HEAD
   - Enemy
+=======
+  - morseCollider
+>>>>>>> aba90aee514cb5bda6f77cec853c0e08b222b5cc
   layers:
   - Default
   - TransparentFX
