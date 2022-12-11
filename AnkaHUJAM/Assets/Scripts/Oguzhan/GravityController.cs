@@ -8,6 +8,8 @@ public class GravityController : MonoBehaviour
 {
     private Rigidbody rb;
     private GameHandler gameHandler;
+    bool temp;
+
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,14 @@ public class GravityController : MonoBehaviour
             if (!gameObject.CompareTag("Player"))
                 rb.AddTorque(Vector3.one * Random.Range(-.4f, .4f));
             else
+            {
                 transform.Find("character").localScale = new Vector3(1, 1, 1);
+                if (!temp)
+                {
+                    GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("AnkaJump"));
+                    temp = true;
+                }
+            }
 
             rb.useGravity = false;
             if (transform.position.y < gameHandler.MaxHeight)
@@ -38,8 +47,11 @@ public class GravityController : MonoBehaviour
         {
             if (gameObject.CompareTag("Player"))
             {
-                if(GetComponent<PlayerController>().isOnGround())
-                    transform.Find("character").localScale = new Vector3(0, 0, 0);  
+                if (GetComponent<PlayerController>().isOnGround())
+                {
+                    transform.Find("character").localScale = new Vector3(0, 0, 0);
+                    temp = false;
+                }
             }
 
             rb.useGravity = true;
