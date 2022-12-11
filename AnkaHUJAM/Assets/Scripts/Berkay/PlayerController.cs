@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             else
                 gameHandler.gravityKeyText.enabled = false;
 
-            if (!isOnGround())
+            if (!isOnGround() && gameHandler.GravityNullified)
                 animator.SetBool("Floating", true);
             else
                 animator.SetBool("Floating", false);

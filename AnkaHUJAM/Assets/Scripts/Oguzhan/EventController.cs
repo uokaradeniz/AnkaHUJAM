@@ -35,7 +35,7 @@ public class EventController : MonoBehaviour
     {
         if (other.CompareTag("Player") && eventType == EventType.DeathTrap)
         {
-            Debug.Log("You fell in to a trap!");
+            gameHandler.PlayDeathClip();
         }
 
         if (other.CompareTag("Player") && eventType == EventType.WeaponPickup)

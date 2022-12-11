@@ -138,4 +138,9 @@ public class GameHandler : MonoBehaviour
     {
         keycardText.enabled = false;
     }
+
+    public void PlayDeathClip()
+    {
+        GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Dreamon"));
+    }
 }

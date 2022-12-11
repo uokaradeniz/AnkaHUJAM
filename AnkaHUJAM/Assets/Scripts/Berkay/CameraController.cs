@@ -64,12 +64,12 @@ public class CameraController : MonoBehaviour
     void FollowPlayer()
     {
         transform.position = player.transform.position + dist;
-        if (player.GetComponent<PlayerController>().isOnGround())
+        if (player.GetComponent<PlayerController>().isOnGround() && !gameHandler.GravityNullified)
         {
             transform.position = orientation.position;
             getDistanceFromPlayer();
         }
-        else
+        else if(!player.GetComponent<PlayerController>().isOnGround() && gameHandler.GravityNullified)
         {
             transform.position = tpsOffset.position;
             rotationY = Mathf.Clamp(rotationY, -135f, 135f);
