@@ -50,7 +50,7 @@ public class EventController : MonoBehaviour
             closeableDoor.GetComponent<MeshRenderer>().enabled = true;
             closeableDoor.GetComponent<NavMeshObstacle>().carving = true;
             Camera.main.transform.Find("Gun").gameObject.SetActive(true);
-            
+            gameHandler.fireText.enabled = true;
             Destroy(gameObject);
         }
 

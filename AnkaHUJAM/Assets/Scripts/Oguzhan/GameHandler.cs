@@ -68,6 +68,7 @@ public class GameHandler : MonoBehaviour
     public Image finishPanel;
     [HideInInspector]public TextMeshProUGUI exitDoorText;
     [HideInInspector]public TextMeshProUGUI gravityKeyText;
+    [HideInInspector] public TextMeshProUGUI fireText;
     
     public Transform spawnPos;
 
@@ -83,6 +84,7 @@ public class GameHandler : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         oxygenSlider = GameObject.Find("OxygenSlider").GetComponent<Slider>();
         gravityText = GameObject.Find("GravityText").GetComponent<TextMeshProUGUI>();
+        fireText = GameObject.Find("FireText").GetComponent<TextMeshProUGUI>();
         gravTextAnimator = gravityText.GetComponent<Animator>();
     }
 
