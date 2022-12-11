@@ -98,6 +98,14 @@ public class PlayerController : MonoBehaviour
                 Quaternion.RotateTowards(transform.rotation, toRotation, RotateSpeed * Time.deltaTime);
         }
     }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "morseCollider")
+        {
+            GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("morseCode"));
+        }
+    }
     
     public bool isOnGround()
     {
