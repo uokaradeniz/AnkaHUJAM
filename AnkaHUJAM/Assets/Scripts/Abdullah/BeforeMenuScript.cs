@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 public class BeforeMenuScript : MonoBehaviour
 {
     public GameObject BeforeMenuCanvas;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
