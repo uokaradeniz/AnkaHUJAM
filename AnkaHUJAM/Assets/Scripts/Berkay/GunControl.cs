@@ -7,13 +7,11 @@ using UnityEngine;
 public class GunControl : MonoBehaviour
 {
     private GameObject muzzle;
-    private LineRenderer lineRenderer;
     private GameHandler gameHandler;
     private PlayerController playerController;
 
     private void Start()
     {
-        lineRenderer = transform.Find("Line").GetComponent<LineRenderer>();
         muzzle = transform.Find("Muzzle").gameObject;
         gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -30,7 +28,6 @@ public class GunControl : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                lineRenderer.enabled = true;
                 GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("Voce"));
                 playerController.oxygenLevel -= 2;
                 Shoot();
@@ -41,12 +38,9 @@ public class GunControl : MonoBehaviour
     void Shoot()
     {
         RaycastHit ray_hit;
-
+        Instantiate(Resources.Load("LaserBeamVFX"), muzzle.transform.position, muzzle.transform.rotation);
         if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out ray_hit, 15))
         {
-            lineRenderer.SetPosition(0, muzzle.transform.position);
-            lineRenderer.SetPosition(1, ray_hit.point);
-            Invoke("CloseLineRenderer", 0.1f);
             if (ray_hit.collider.CompareTag("Breakable"))
             {
                 Destroy(ray_hit.collider.gameObject);
@@ -58,10 +52,5 @@ public class GunControl : MonoBehaviour
                 ray_hit.collider.GetComponent<EnemyAI>().health -= 1;
             }
         }
-    }
-
-    void CloseLineRenderer()
-    {
-        lineRenderer.enabled = false;
     }
 }
