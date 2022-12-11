@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028699081, g: 0.0027488684, b: 0.057238407, a: 1}
+  m_IndirectSpecularColor: {r: 0.028685186, g: 0.0027449564, b: 0.05723044, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -355,7 +355,7 @@ MonoBehaviour:
     use WASD keys to move around and use SPACEBAR to turn off the artificial gravity
     system.\r\n-Remember that you have limited amount of oxygen and must escape before
     you run out of fresh air.\r\n-Watch your back ! \r\n-You may not be able to Get
-    Atlas Out at the first time, memorise the maze. \r\nGood Luck!\n                                                  
+    Atlas Out at the first time, memorize the maze. \r\nGood Luck!\n                                                  
     Press 'Enter' to Continue"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
