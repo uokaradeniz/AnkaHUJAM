@@ -28668,6 +28668,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1908242042323135534, guid: 52dea94f63c8d3e44be0fc0bb424a787, type: 3}
+      propertyPath: m_text
+      value: 'Tip: Follow the Lights.'
+      objectReference: {fileID: 0}
     - target: {fileID: 1908242042323135535, guid: 52dea94f63c8d3e44be0fc0bb424a787, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
