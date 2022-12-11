@@ -69,12 +69,18 @@ public class GameHandler : MonoBehaviour
     [HideInInspector]public TextMeshProUGUI exitDoorText;
     [HideInInspector]public TextMeshProUGUI gravityKeyText;
     [HideInInspector] public TextMeshProUGUI fireText;
+    [HideInInspector]public TextMeshProUGUI missionWeaponText;
+    [HideInInspector]public TextMeshProUGUI missionKeycardText;
+
+
     
     public Transform spawnPos;
 
     public bool gameFinished;
     private void Start()
     {
+        missionWeaponText = GameObject.Find("MissionWeaponText").GetComponent<TextMeshProUGUI>();
+        missionKeycardText = GameObject.Find("MissionKeycardText").GetComponent<TextMeshProUGUI>();
         exitDoorText = GameObject.Find("ExitDoorText").GetComponent<TextMeshProUGUI>();
         keycardText = GameObject.Find("KeycardText").GetComponent<TextMeshProUGUI>();
         finishPanel = GameObject.Find("FinishPanel").GetComponent<Image>();

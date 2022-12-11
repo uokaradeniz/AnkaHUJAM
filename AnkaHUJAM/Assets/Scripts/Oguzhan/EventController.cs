@@ -51,6 +51,7 @@ public class EventController : MonoBehaviour
             closeableDoor.GetComponent<NavMeshObstacle>().carving = true;
             Camera.main.transform.Find("Gun").gameObject.SetActive(true);
             gameHandler.fireText.enabled = true;
+            gameHandler.missionWeaponText.enabled = false;
             Destroy(gameObject);
         }
 
@@ -60,6 +61,7 @@ public class EventController : MonoBehaviour
             gameHandler.aPanelIsOpen = true;
             gameHandler.keycardFound = true;
             gameHandler.keycardText.enabled = true;
+            gameHandler.missionKeycardText.enabled = false;
             Destroy(gameObject);
         }
 
