@@ -42,7 +42,7 @@ public class GunControl : MonoBehaviour
     {
         RaycastHit ray_hit;
 
-        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out ray_hit, Mathf.Infinity))
+        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out ray_hit, 15))
         {
             lineRenderer.SetPosition(0, muzzle.transform.position);
             lineRenderer.SetPosition(1, ray_hit.point);
