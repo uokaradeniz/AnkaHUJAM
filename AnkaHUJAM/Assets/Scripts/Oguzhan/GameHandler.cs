@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,11 +63,13 @@ public class GameHandler : MonoBehaviour
     public bool keycardFound;
     public bool aPanelIsOpen;
 
-    public TextMeshProUGUI weaponText;
-    public TextMeshProUGUI keycardText;
+    [HideInInspector]public TextMeshProUGUI weaponText;
+    [HideInInspector]public TextMeshProUGUI keycardText;
     public Image finishPanel;
-    public TextMeshProUGUI exitDoorText;
-    public TextMeshProUGUI gravityKeyText;
+    [HideInInspector]public TextMeshProUGUI exitDoorText;
+    [HideInInspector]public TextMeshProUGUI gravityKeyText;
+    
+    public Transform spawnPos;
 
     private void Start()
     {

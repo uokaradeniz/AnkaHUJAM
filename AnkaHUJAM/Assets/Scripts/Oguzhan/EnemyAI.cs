@@ -9,10 +9,13 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent navMesh;
     private GameObject player;
     public float atkPower;
-    
+    private GameHandler gameHandler;
+    public int health;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameHandler = GameObject.Find("Game Handler").GetComponent<GameHandler>();
         navMesh = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -20,14 +23,40 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        navMesh.SetDestination(player.transform.position);
-        
-        if (Vector3.Distance(player.transform.position, transform.position) < 3)
+        if (health <= 0)
         {
+            navMesh.ResetPath();
+            GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("MonsterDeath"));
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            Instantiate(Resources.Load("EnemyHitFX"), transform.position,
+                transform.rotation);
+            transform.position = gameHandler.spawnPos.position;
+            health = 5;
+        }
+        else
+        {
+            navMesh.SetDestination(player.transform.position);
+        }
+
+        if (gameHandler.GravityNullified)
+            navMesh.isStopped = true;
+        else
+            navMesh.isStopped = false;
+
+
+        if (navMesh.speed >= 5 && !gameHandler.GravityNullified)
+            GetComponent<Animator>().SetFloat("Walk", 1);
+        else if(navMesh.speed < 5 || gameHandler.GravityNullified)
+            GetComponent<Animator>().SetFloat("Walk", 0);
+
+        if (Vector3.Distance(player.transform.position, transform.position) < 4.5 && !gameHandler.GravityNullified)
+        {
+            navMesh.speed = 3.5f;
             GetComponent<Animator>().SetBool("Attack", true);
         }
         else
         {
+            navMesh.speed = 6;
             GetComponent<Animator>().SetBool("Attack", false);
         }
     }
@@ -35,5 +64,6 @@ public class EnemyAI : MonoBehaviour
     public void Attack()
     {
         player.GetComponent<PlayerController>().oxygenLevel -= atkPower;
+        GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("MonsterAttack"));
     }
 }
