@@ -63,6 +63,7 @@ public class CameraController : MonoBehaviour
 
     void FollowPlayer()
     {
+
         transform.position = player.transform.position + dist;
         if (player.GetComponent<PlayerController>().isOnGround() && !gameHandler.GravityNullified)
         {
@@ -71,9 +72,9 @@ public class CameraController : MonoBehaviour
         }
         else if(!player.GetComponent<PlayerController>().isOnGround() && gameHandler.GravityNullified)
         {
-            transform.position = tpsOffset.position;
-            rotationY = Mathf.Clamp(rotationY, -135f, 135f);
+            transform.position = tpsOffset.position;   
         }
+
     }
 
     void LookAroundWithMouse()
