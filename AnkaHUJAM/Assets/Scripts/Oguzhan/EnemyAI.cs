@@ -25,41 +25,50 @@ public class EnemyAI : MonoBehaviour
     {
         if (!gameHandler.gameFinished)
         {
-            if (health <= 0)
+            if (player.GetComponent<PlayerController>().oxygenLevel > 0)
             {
-                navMesh.ResetPath();
-                GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("MonsterDeath"));
-                GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-                Instantiate(Resources.Load("EnemyHitFX"), transform.position,
-                    transform.rotation);
-                transform.position = gameHandler.spawnPos.position;
-                health = 5;
+                if (health <= 0)
+                {
+                    navMesh.ResetPath();
+                    GetComponent<AudioSource>().PlayOneShot((AudioClip)Resources.Load("MonsterDeath"));
+                    GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                    Instantiate(Resources.Load("EnemyHitFX"), transform.position,
+                        transform.rotation);
+                    transform.position = gameHandler.spawnPos.position;
+                    health = 5;
+                }
+                else
+                {
+                    navMesh.SetDestination(player.transform.position);
+                }
+
+                if (gameHandler.GravityNullified)
+                    navMesh.isStopped = true;
+                else
+                    navMesh.isStopped = false;
+
+
+                if (navMesh.speed >= 10 && !gameHandler.GravityNullified)
+                    GetComponent<Animator>().SetFloat("Walk", 1);
+                else if (navMesh.speed < 10 || gameHandler.GravityNullified)
+                    GetComponent<Animator>().SetFloat("Walk", 0);
+
+                if (Vector3.Distance(player.transform.position, transform.position) < 4.5 &&
+                    !gameHandler.GravityNullified)
+                {
+                    navMesh.speed = 3.5f;
+                    GetComponent<Animator>().SetBool("Attack", true);
+                }
+                else
+                {
+                    navMesh.speed = 10;
+                    GetComponent<Animator>().SetBool("Attack", false);
+                }
             }
             else
             {
-                navMesh.SetDestination(player.transform.position);
-            }
-
-            if (gameHandler.GravityNullified)
-                navMesh.isStopped = true;
-            else
-                navMesh.isStopped = false;
-
-
-            if (navMesh.speed >= 10 && !gameHandler.GravityNullified)
-                GetComponent<Animator>().SetFloat("Walk", 1);
-            else if (navMesh.speed < 10 || gameHandler.GravityNullified)
-                GetComponent<Animator>().SetFloat("Walk", 0);
-
-            if (Vector3.Distance(player.transform.position, transform.position) < 4.5 && !gameHandler.GravityNullified)
-            {
-                navMesh.speed = 3.5f;
-                GetComponent<Animator>().SetBool("Attack", true);
-            }
-            else
-            {
-                navMesh.speed = 10;
                 GetComponent<Animator>().SetBool("Attack", false);
+                navMesh.isStopped = true;
             }
         }
     }
